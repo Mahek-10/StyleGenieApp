@@ -4,7 +4,6 @@ StyleGenie is a Streamlit web app that helps users generate stylish outfit desig
 - Get outfit suggestions
 - Generate color palettes
 - Receive fabric recommendations
-- View simulated or AI-generated dress designs
 - Take a fashion personality quiz!
 
 ## 🧠 Features
