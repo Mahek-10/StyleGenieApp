@@ -104,23 +104,6 @@ def main_ui():
     st.header("5. AI Stylist Tips 💄")
     st.markdown("Accessories: Silver heels, clutch bag\nMakeup: Neutral tones\nHairstyle: Soft curls or bun")
 
-    st.header("6. Save/Load Designs 💾")
-    design_name = st.text_input("Design Name")
-    if st.button("Save Design"):
-        data = {
-            "occasion": occasion, "style": style, "season": season,
-            "base_color": base_color, "fabric": fabric, "outfit": outfit
-        }
-        with open(f"{design_name}.json", "w") as f:
-            json.dump(data, f)
-        st.success("Design saved!")
-    if st.button("Load Design"):
-        try:
-            with open(f"{design_name}.json", "r") as f:
-                loaded = json.load(f)
-                st.json(loaded)
-        except:
-            st.error("No such design found.")
 
     st.header("7. Feedback 📣")
     feedback = st.radio("Do you like this design?", ["👍 Yes", "👎 No"])
@@ -130,16 +113,7 @@ def main_ui():
     st.header("8. Smart Color Suggestions 🎨")
     st.write(f"Recommended matches for {base_color}: {generate_palette(base_color)}")
 
-    st.header("9. Fabric Advisor+ 🧵")
-    info = {
-        "Cotton": "Breathable, good for summer",
-        "Silk": "Smooth and elegant",
-        "Denim": "Casual and durable",
-        "Velvet": "Warm and luxurious",
-        "Leather": "Edgy but less breathable"
-    }
-    st.info(info.get(fabric.split(":")[-1].strip(), "No info"))
-
+  
     st.header("10. Style Quiz 🎯")
     q1 = st.selectbox("Weekend outfit:", ["Jeans & Tee", "Boho Dress", "Power Suit", "Athleisure"])
     q2 = st.selectbox("Color palette:", ["Earth Tones", "Brights", "Monochrome", "Pastels"])
@@ -153,11 +127,7 @@ def main_ui():
         else:
             st.success("You're a Casual Cool Cat 😎")
 
-    st.header("11. Virtual Wardrobe 📸")
-    uploaded = st.file_uploader("Upload your clothing items", type=["jpg", "png"], accept_multiple_files=True)
-    if uploaded:
-        for img in uploaded:
-            st.image(img, width=120)
+  
 
 def app():
     if "username" not in st.session_state:
