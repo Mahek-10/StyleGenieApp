@@ -1,4 +1,4 @@
-def recommend_fabric(fabric_type, season="Summer", style="Casual"):
+def recommend_fabric_rule(fabric_type, season="Summer", style="Casual"):
     fabrics = {
         ("Shirt", "Summer", "Casual"): "Cotton",
         ("Shirt", "Winter", "Formal"): "Flannel",
