@@ -1,10 +1,11 @@
-import joblib
+import os
+MODEL_DIR = os.path.dirname(__file__)
 
-model = joblib.load("fabric_model.pkl")
-le_garment = joblib.load("le_garment.pkl")
-le_season = joblib.load("le_season.pkl")
-le_style = joblib.load("le_style.pkl")
-le_fabric = joblib.load("le_fabric.pkl")
+model = joblib.load(os.path.join(MODEL_DIR, "fabric_model.pkl"))
+le_garment = joblib.load(os.path.join(MODEL_DIR, "le_garment.pkl"))
+le_season = joblib.load(os.path.join(MODEL_DIR, "le_season.pkl"))
+le_style = joblib.load(os.path.join(MODEL_DIR, "le_style.pkl"))
+le_fabric = joblib.load(os.path.join(MODEL_DIR, "le_fabric.pkl"))
 
 def recommend_fabric_ml(garment, season, style):
     g = le_garment.transform([garment])[0]
