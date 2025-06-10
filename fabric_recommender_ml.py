@@ -1,4 +1,6 @@
 import os
+import joblib
+
 MODEL_DIR = os.path.dirname(__file__)
 
 model = joblib.load(os.path.join(MODEL_DIR, "fabric_model.pkl"))
