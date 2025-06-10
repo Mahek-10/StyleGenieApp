@@ -1,5 +1,3 @@
-# fabric_recommender_rule.py
-
 def recommend_fabric_rule(fabric_type, season="Summer", style="Casual"):
     fabrics = {
         ("Shirt", "Summer", "Casual"): "Cotton",
