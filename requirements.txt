@@ -1,4 +1,6 @@
 streamlit
+openai
+pillow
 scikit-learn
 pandas
 joblib
